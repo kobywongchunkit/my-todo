@@ -1,5 +1,5 @@
 import{ useState } from 'react';
-function Todo(props){
+function TodoItem(props){
     const [todoText, setTodo] = useState("");
     
     function setTodo(todo){
