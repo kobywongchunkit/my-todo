@@ -1,13 +1,16 @@
+import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
-function TodoGroup(props){
+function TodoGroup(){
+    const todoList = useSelector(state => state.todo);
+
     return(
         <>
         {
-            props.todoList.map((item,index)=>{
+            todoList.map((item)=>{
                 return <TodoItem 
-                        key={Date.now()+index}
-                        todoText={item}
+                        key={item.id}
+                        todo={item}
                 />;
             })
         }

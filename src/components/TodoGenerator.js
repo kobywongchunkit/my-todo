@@ -1,7 +1,7 @@
 import{ useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { UPDATE_TODO } from '../constants/constants'
-function TodoGenerator(props){
+function TodoGenerator(){
     const [todoGeneratorText, setTodoGeneratorText] = useState("");
     const dispatch = useDispatch();
     function updateTodoGeneratorText(event){
@@ -9,8 +9,7 @@ function TodoGenerator(props){
     }
     function addToList(){
         if(todoGeneratorText.length < 1) return;
-        props.addToList(todoGeneratorText)
-        dispatch({type:UPDATE_TODO,payload: {id: Date.now() ,text:todoGeneratorText, done:false}})
+        dispatch({type:UPDATE_TODO,payload: {id:Date.now(), text:todoGeneratorText, done:false}})
         setTodoGeneratorText("")
     }
     return(

@@ -1,6 +1,6 @@
-function TodoItem(props){
+function TodoItem({todo}){
     return(
-            <div className="todoItem">{props.todoText}</div>
+            <div className="todoItem">{todo.text}</div>
     );
 }
 
