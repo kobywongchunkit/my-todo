@@ -1,22 +1,21 @@
-import{ useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { UPDATE_TODO } from '../constants/constants'
 function TodoGenerator(){
-    const [todoGeneratorText, setTodoGeneratorText] = useState("");
     const dispatch = useDispatch();
-    function updateTodoGeneratorText(event){
-        setTodoGeneratorText(event.target.value)
+
+    function addToList(event){
+        const todoValue = event.target.todo.value;
+        event.preventDefault();
+        if(todoValue < 1) return;
+        dispatch({type:UPDATE_TODO,payload: {id:Date.now(), text:todoValue, done:false}})
+        event.target.todo.value = ""
     }
-    function addToList(){
-        if(todoGeneratorText.length < 1) return;
-        dispatch({type:UPDATE_TODO,payload: {id:Date.now(), text:todoGeneratorText, done:false}})
-        setTodoGeneratorText("")
-    }
+
     return(
-        <div className='input-div'>
-        <input value={todoGeneratorText} onChange={updateTodoGeneratorText}></input>
-        <button className="Add-button" onClick={addToList}>add</button>
-        </div>
+        <form className='input-div' onSubmit={event => addToList(event)}>
+            <input type="text"  name="todo" required></input>
+            <input type="submit" className="Add-button" value='add'/>
+        </form>
     )
 }
 export default TodoGenerator;
