@@ -1,4 +1,4 @@
-import { UPDATE_TODO, TOGGLE_TODO } from "../constants/constants";
+import { UPDATE_TODO, TOGGLE_TODO ,REMOVE_TODO } from "../constants/constants";
 
 const initLocal = {todo:[]};
 const todoReducer = (state = initLocal , action) =>{
@@ -10,8 +10,11 @@ const todoReducer = (state = initLocal , action) =>{
                 if(item.id === action.payload)
                     item.done = !item.done
                 return item
-                    }
+                }
             )}
+        case REMOVE_TODO:
+            return {...state, todo : state.todo.filter(todo => todo.id !== action.payload)
+                }
         default:
             return state;
     }
