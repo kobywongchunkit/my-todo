@@ -11,6 +11,7 @@ function TodoItem({todo}){
             <div className="todoItem" onClick={doneTodo}         
             style={{
                 textDecoration: todo.done ? 'line-through' : 'none',
+                background: todo.done ? 'LightGreen' : 'none',
               }}
               >{todo.text}</div>
     );
