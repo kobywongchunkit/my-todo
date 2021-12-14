@@ -7,12 +7,7 @@ function TodoItem({todo}){
         dispatch({type:TOGGLE_TODO,payload: todo.id})
     }
     return(
-            
-            <div className="todoItem" onClick={doneTodo}         
-            style={{
-                textDecoration: todo.done ? 'line-through' : 'none',
-                background: todo.done ? 'LightGreen' : 'none',
-              }}
+            <div className={todo.done ?'todoItem done': 'todoItem undone'} onClick={doneTodo}         
               >{todo.text}</div>
     );
 }
