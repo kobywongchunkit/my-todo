@@ -68,7 +68,6 @@ input{
   text-align: center;
 }
 
-
 .done {
   text-decoration: line-through;
   background: lightgreen;
@@ -76,4 +75,8 @@ input{
 .undone{
   text-decoration: none;
   background: lightcoral;
+}
+
+.cross{
+  float: right;
 }
