@@ -5,6 +5,7 @@ function TodoGenerator(props){
         setTodoGeneratorText(event.target.value)
     }
     function addToList(){
+        if(todoGeneratorText.length < 1) return;
         props.addToList(todoGeneratorText)
         setTodoGeneratorText("")
     }
