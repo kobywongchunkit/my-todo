@@ -1,10 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { DONE_TODO } from '../constants/constants'
+import { TOGGLE_TODO } from '../constants/constants'
 
 function TodoItem({todo}){
     const dispatch = useDispatch();
     function doneTodo(){
-        dispatch({type:DONE_TODO,payload: todo.id})
+        dispatch({type:TOGGLE_TODO,payload: todo.id})
     }
     return(
             
