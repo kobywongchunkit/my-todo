@@ -1,12 +1,16 @@
 import{ useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { UPDATE_TODO } from '../constants/constants'
 function TodoGenerator(props){
     const [todoGeneratorText, setTodoGeneratorText] = useState("");
+    const dispatch = useDispatch();
     function updateTodoGeneratorText(event){
         setTodoGeneratorText(event.target.value)
     }
     function addToList(){
         if(todoGeneratorText.length < 1) return;
         props.addToList(todoGeneratorText)
+        dispatch({type:UPDATE_TODO,payload: {id: Date.now() ,text:todoGeneratorText, done:false}})
         setTodoGeneratorText("")
     }
     return(
