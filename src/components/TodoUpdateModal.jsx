@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Modal ,Input } from 'antd';
 import { updateTodo } from '../apis/todo';
 import { useDispatch } from 'react-redux';
 import { UPDATE_TODO } from '../constants/constants';
 
-const TodoUpdateModal = (props) => {
-  const {id,text,setIsModalVisible,isModalVisible} = props; 
+const TodoUpdateModal = ({id,text,setIsModalVisible,isModalVisible}) => {
   const [modalText, setModalText] = useState(text);
   const dispatch = useDispatch();
   

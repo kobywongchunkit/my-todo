@@ -33,7 +33,12 @@ function TodoItem({todo}){
             {text} <span className='todoItemIcon' onClick={removeTodo}><DeleteOutlined style={{ fontSize: '25px' }}/></span>
             <span className='todoItemIcon' onClick={showModal}><FormOutlined style={{ fontSize: '25px' , marginRight: '20px'}}/></span>
         </p>
-        <TodoUpdateModal id={id} text={text} setIsModalVisible={setIsModalVisible} isModalVisible={isModalVisible}/>
+        <TodoUpdateModal 
+            id={id} 
+            text={text} 
+            setIsModalVisible={setIsModalVisible} 
+            isModalVisible={isModalVisible}
+        />
         </>
     );
 }
