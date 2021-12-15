@@ -35,36 +35,21 @@ function App() {
             <Link to="/Undone">Undone</Link>
           </li>
         </ul>
-
+		
         <Switch>
           <Route path="/Done">
-            <Done />
+          	<TodoListFiltered done={true}/>
           </Route>
           <Route path="/Undone">
-            <Undone />
+		  	<TodoListFiltered done={false}/>
           </Route>
           <Route path="/">
-            <Home />
+		  	<TodoList/>
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return  <>
-    <div className="App">
-    <TodoList></TodoList>
-  </div></>
-}
-
-function Done() {
-  return <TodoListFiltered done={true}></TodoListFiltered>;
-}
-
-function Undone() {
-  return <TodoListFiltered done={false}></TodoListFiltered>;
 }
 
 export default App;
