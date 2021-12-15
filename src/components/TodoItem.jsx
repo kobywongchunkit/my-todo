@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../apis/todo';
 import { REMOVE_TODO, TOGGLE_DONE } from '../constants/constants'
+import TodoUpdateModal from './TodoUpdateModal';
 
 function TodoItem({todo}){
     const dispatch = useDispatch();
@@ -19,9 +20,10 @@ function TodoItem({todo}){
         
     }
     return(
-            <p className={`TodoItem-todo ${done ? "done" : ""}`} onClick={toggleTodo}>
-                {text} <span className='cross' onClick={removeTodo}>❌</span>
-            </p>
+        <p className={`TodoItem-todo ${done ? "done" : ""}`} onClick={toggleTodo}>
+        {text} <span className='cross' onClick={removeTodo}>❌</span>
+        <TodoUpdateModal id={id} text={text}/>
+        </p>
     );
 }
 
