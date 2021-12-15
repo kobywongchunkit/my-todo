@@ -26,13 +26,13 @@ function App() {
       <div>
         <ul id="menu">
           <li>
-            <Link to="/">Home</Link>
+            <Link className="navBarItem" to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Done">Done</Link>
+            <Link className="navBarItem" to="/Done">Done</Link>
           </li>
           <li>
-            <Link to="/Undone">Undone</Link>
+            <Link className="navBarItem" to="/Undone">Undone</Link>
           </li>
         </ul>
 		

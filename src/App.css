@@ -39,6 +39,7 @@
 
 h1{
   text-align: center;
+  font-family:'Courier New', Courier, monospace;
 }
 
 
@@ -86,6 +87,12 @@ input{
 li {
   display:inline;
   padding: 10px 20px;
+}
+
+.navBarItem{
+  color: #000;
+  text-decoration: none;
+  font-family:'Courier New', Courier, monospace;
 }
 
 .clock::after {
