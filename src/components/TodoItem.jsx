@@ -7,14 +7,14 @@ function TodoItem({todo}){
     const {id, text ,done} = todo;
     
     function toggleTodo(){
-        updateTodo(id,{done: !todo.done}).then(()=>
-            dispatch({type:TOGGLE_DONE,payload: id})
+        updateTodo(id,{done: !todo.done}).then((reponse)=>
+            dispatch({type:TOGGLE_DONE,payload: reponse.data.id})
         )
     }
     function removeTodo(event){
         event.stopPropagation();
-        deleteTodo(id).then(()=>{
-            dispatch({type:REMOVE_TODO,payload: id})
+        deleteTodo(id).then((reponse)=>{
+            dispatch({type:REMOVE_TODO,payload: reponse.data.id})
         })
         
     }
