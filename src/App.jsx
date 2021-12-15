@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import 'antd/dist/antd.css'
 
 function App() {
   const dispatch = useDispatch();
