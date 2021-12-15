@@ -3,7 +3,7 @@ import TodoGroup from './TodoGroup';
 function TodoList(){
     return(
             <>
-                <h1>Todo List</h1>
+                <h1>Todo List <span class="emoji clock" role="img" /></h1>
                 <TodoGroup></TodoGroup>
                 <TodoGenerator></TodoGenerator>
             </>

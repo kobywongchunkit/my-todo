@@ -2,7 +2,7 @@ import TodoGroupFiltered from './TodoGroupFiltered';
 function TodoListFiltered({done}){
     return(
             <>
-                <h1>{done? "Done" : "Undone"} List</h1>
+                <h1>{done? "Done" : "Undone"} </h1>
                 <TodoGroupFiltered done={done}/>
             </>
     )
