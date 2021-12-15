@@ -1,4 +1,5 @@
 import TodoList from './components/TodoList';
+import TodoListFiltered from './components/TodoListFiltered';
 import {
   BrowserRouter as Router,
   Switch,
@@ -50,11 +51,11 @@ function Home() {
 }
 
 function Done() {
-  return <h2>Done</h2>;
+  return <TodoListFiltered done={true}></TodoListFiltered>;
 }
 
 function Undone() {
-  return <h2>Undone</h2>;
+  return <TodoListFiltered done={false}></TodoListFiltered>;
 }
 
 export default App;
