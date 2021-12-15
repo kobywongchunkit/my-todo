@@ -8,7 +8,8 @@ function TodoItem({todo}){
     function toggleTodo(){
         dispatch({type:TOGGLE_DONE,payload: id})
     }
-    function removeTodo(){
+    function removeTodo(event){
+        event.stopPropagation();
         dispatch({type:REMOVE_TODO,payload: id})
     }
     return(
