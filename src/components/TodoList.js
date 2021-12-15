@@ -1,4 +1,3 @@
-// import TodoGroup from "./TodoGroup"
 import TodoGenerator from "./TodoGenerator"
 import TodoGroup from './TodoGroup';
 function TodoList(){

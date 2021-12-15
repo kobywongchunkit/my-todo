@@ -7,8 +7,7 @@ function TodoGenerator(){
     function addToList(event){
         const todoValue = event.target.todo.value;
         event.preventDefault();
-        if(todoValue < 1) return;
-        dispatch({type:UPDATE_TODO,payload: {id:uuidv4(), text:todoValue, done:false}})
+        dispatch({type:UPDATE_TODO, payload: {id:uuidv4(), text:todoValue, done:false}})
         event.target.todo.value = ""
     }
 
