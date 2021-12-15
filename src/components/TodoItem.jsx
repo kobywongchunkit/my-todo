@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../apis/todo';
 import { REMOVE_TODO, TOGGLE_DONE } from '../constants/constants'
@@ -5,6 +6,7 @@ import TodoUpdateModal from './TodoUpdateModal';
 
 function TodoItem({todo}){
     const dispatch = useDispatch();
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const {id, text ,done} = todo;
     
     function toggleTodo(){
@@ -17,13 +19,22 @@ function TodoItem({todo}){
         deleteTodo(id).then((reponse)=>{
             dispatch({type:REMOVE_TODO,payload: reponse.data.id})
         })
-        
     }
+
+    const showModal = (event) => {
+        event.stopPropagation();
+        setIsModalVisible(true);
+      };
+      
+
     return(
+        <>
         <p className={`TodoItem-todo ${done ? "done" : ""}`} onClick={toggleTodo}>
-        {text} <span className='cross' onClick={removeTodo}>❌</span>
-        <TodoUpdateModal id={id} text={text}/>
+            {text} <span className='cross' onClick={removeTodo}>❌</span>
+            <span className='cross' onClick={showModal}>✏️</span>
         </p>
+        <TodoUpdateModal id={id} text={text} setIsModalVisible={setIsModalVisible} isModalVisible={isModalVisible}/>
+        </>
     );
 }
 

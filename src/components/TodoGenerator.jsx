@@ -8,7 +8,6 @@ function TodoGenerator(){
         const text = event.target.todo.value;
         event.preventDefault();
         addTodo({text, done:false}).then((response)=>{
-            console.log(response)
             dispatch({type:ADD_TODO, payload: response.data})
         })
         event.target.todo.value = ""
