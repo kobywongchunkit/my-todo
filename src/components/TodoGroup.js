@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
 function TodoGroup(){
-    const todoList = useSelector(state => state.todo);
+    const todoList = useSelector(state => state.todos);
 
     return(
         <>

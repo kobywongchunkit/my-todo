@@ -10,7 +10,7 @@ function TodoItem({todo}){
         dispatch({type:REMOVE_TODO,payload: todo.id})
     }
     return(
-            <p className={todo.done ? 'todoItem done' : 'todoItem undone'} onClick={toggleTodo}>
+            <p className={`TodoItem-todo ${todo.done ? "done" : ""}`} onClick={toggleTodo}>
                 {todo.text} <span className='cross' onClick={removeTodo}>❌</span>
             </p>
     );

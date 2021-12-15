@@ -40,12 +40,7 @@
 h1{
   text-align: center;
 }
-.todoItem{
-  border: solid;
-  margin: 10px;
-  padding: 10px;
-  font-size: 20px;
-}
+
 
 .Add-button{
   background-color: rgb(61, 61, 235);
@@ -69,13 +64,18 @@ input{
   text-align: center;
 }
 
+.TodoItem-todo{
+  border: solid;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  background: lightcoral;
+}
+
 .done {
   text-decoration: line-through;
   background: lightgreen;
-}
-.undone{
-  text-decoration: none;
-  background: lightcoral;
 }
 
 .cross{
