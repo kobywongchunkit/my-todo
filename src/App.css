@@ -71,7 +71,7 @@ input{
   padding: 10px;
   font-size: 20px;
   text-decoration: none;
-  background: lightcoral;
+  background: none;
 }
 
 .done {
@@ -94,6 +94,7 @@ li {
   text-decoration: none;
   font-family:'Courier New', Courier, monospace;
 }
+
 
 .clock::after {
   content: '🕛';

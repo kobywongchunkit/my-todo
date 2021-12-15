@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../apis/todo';
 import { REMOVE_TODO, TOGGLE_DONE } from '../constants/constants'
+import { DeleteOutlined, FormOutlined} from '@ant-design/icons';
 import TodoUpdateModal from './TodoUpdateModal';
-
 function TodoItem({todo}){
     const dispatch = useDispatch();
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -30,8 +30,8 @@ function TodoItem({todo}){
     return(
         <>
         <p className={`TodoItem-todo ${done ? "done" : ""}`} onClick={toggleTodo}>
-            {text} <span className='cross' onClick={removeTodo}>❌</span>
-            <span className='cross' onClick={showModal}>✏️</span>
+            {text} <span className='cross' onClick={removeTodo}><DeleteOutlined style={{ fontSize: '25px' }}/></span>
+            <span className='cross' onClick={showModal}><FormOutlined style={{ fontSize: '25px' , marginRight: '20px'}}/></span>
         </p>
         <TodoUpdateModal id={id} text={text} setIsModalVisible={setIsModalVisible} isModalVisible={isModalVisible}/>
         </>
