@@ -79,7 +79,7 @@ input{
   background: lightgreen;
 }
 
-.cross{
+.todoItemIcon{
   float: right;
   cursor: pointer;
 }
