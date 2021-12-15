@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import TodoItem from "./TodoItem";
 
-function TodoGroup({done}){
+function TodoGroupFiltered({done}){
     const todoList = useSelector(state => state.todos).filter(todo => (todo.done === done));
 
     return(
@@ -18,4 +18,4 @@ function TodoGroup({done}){
     )
 }
 
-export default TodoGroup;
+export default TodoGroupFiltered;

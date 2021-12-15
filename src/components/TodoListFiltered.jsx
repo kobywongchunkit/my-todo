@@ -1,9 +1,9 @@
-import TodoGroupFitered from './TodoGroupFitered';
+import TodoGroupFiltered from './TodoGroupFiltered';
 function TodoListFiltered({done}){
     return(
             <>
                 <h1>{done? "Done" : "Undone"} List</h1>
-                <TodoGroupFitered done={done}></TodoGroupFitered>
+                <TodoGroupFiltered done={done}/>
             </>
     )
 }
