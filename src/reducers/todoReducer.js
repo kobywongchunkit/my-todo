@@ -1,9 +1,9 @@
-import { UPDATE_TODO, TOGGLE_DONE ,REMOVE_TODO, INIT_TODO } from "../constants/constants";
+import { ADD_TODO, TOGGLE_DONE ,REMOVE_TODO, INIT_TODO } from "../constants/constants";
 
 const initLocal = {todos:[]};
 const todoReducer = (state = initLocal , action) =>{
     switch(action.type){
-        case UPDATE_TODO:
+        case ADD_TODO:
             return {...state, todos : [...state.todos, action.payload]}
         case TOGGLE_DONE:
             return {...state, todos : state.todos.map(item => (item.id === action.payload ? {...item, done: !item.done} : item))

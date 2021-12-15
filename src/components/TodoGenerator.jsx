@@ -1,13 +1,15 @@
 import { useDispatch } from 'react-redux';
-import { UPDATE_TODO } from '../constants/constants'
-import { v4 as uuidv4 } from "uuid";
+import { ADD_TODO } from '../constants/constants'
+import { addTodo } from '../apis/todo';
 function TodoGenerator(){
     const dispatch = useDispatch();
 
     function addToList(event){
-        const todoValue = event.target.todo.value;
+        const text = event.target.todo.value;
         event.preventDefault();
-        dispatch({type:UPDATE_TODO, payload: {id:uuidv4(), text:todoValue, done:false}})
+        addTodo({text, done:false}).then((response)=>{
+            dispatch({type:ADD_TODO, payload: response.data})
+        })
         event.target.todo.value = ""
     }
 

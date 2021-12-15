@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import TodoList from './components/TodoList';
 import TodoListFiltered from './components/TodoListFiltered';
-import api from "./apis/todos";
+import { getTodos } from "./apis/todo";
 import { INIT_TODO } from "./constants/constants";
 import {
   BrowserRouter as Router,
@@ -16,7 +16,7 @@ import './App.css';
 function App() {
   const dispatch = useDispatch();
   useEffect(()=>{
-      api.get('/todos').then((response)=>{
+	getTodos().then((response)=>{
           dispatch({type:INIT_TODO, payload:response.data});
       })
   });
