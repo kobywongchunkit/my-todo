@@ -15,7 +15,7 @@ function TodoGenerator(){
 
     return(
         <form className='input-div' onSubmit={event => addToList(event)}>
-            <input type="text"  name="todo" placeholder="input a new todo here" required></input>
+            <input type="text"  name="todo" className="todoInput" placeholder="input a new todo here" required></input>
             <input type="submit" className="Add-button" value='add'/>
         </form>
     )

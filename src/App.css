@@ -95,6 +95,9 @@ li {
   font-family:'Courier New', Courier, monospace;
 }
 
+.todoInput{
+  font-size: large;
+}
 
 .clock::after {
   content: '🕛';
