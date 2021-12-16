@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { UPDATE_TODO } from '../constants/constants';
 
 const TodoUpdateModal = ({id,text,setIsModalVisible,isModalVisible}) => {
+  const orginal_text = text;
   const [modalText, setModalText] = useState(text);
   const dispatch = useDispatch();
   
@@ -20,6 +21,7 @@ const TodoUpdateModal = ({id,text,setIsModalVisible,isModalVisible}) => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
+    setModalText(orginal_text);
   };
 
   return (
