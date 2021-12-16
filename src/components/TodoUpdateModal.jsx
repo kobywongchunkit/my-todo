@@ -25,7 +25,7 @@ const TodoUpdateModal = ({id,text,setIsModalVisible,isModalVisible}) => {
   };
 
   return (
-      <Modal title={"Edit Todo: "+text} visible={isModalVisible} onOk={handleOk}  onCancel={handleCancel} destroyOnClose={true}>
+      <Modal title={"Editing Todo : '"+text+"'"} visible={isModalVisible} onOk={handleOk}  onCancel={handleCancel} destroyOnClose={true}>
         <Input onChange={text => setModalText(text.target.value)} defaultValue={modalText}/>
       </Modal>
   );
