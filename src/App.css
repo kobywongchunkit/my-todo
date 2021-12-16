@@ -79,7 +79,7 @@ input{
 .done {
   text-decoration: line-through;
   /* background: lightgreen; */
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 .todoItemIcon{
