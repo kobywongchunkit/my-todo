@@ -156,3 +156,8 @@ li {
       content: '🕚';
   }
 }
+
+.antIcon{
+  font-size: 25px;
+  margin-right: 15px;
+}

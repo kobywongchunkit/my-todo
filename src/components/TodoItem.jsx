@@ -30,8 +30,8 @@ function TodoItem({todo}){
     return(
         <>
         <p className={`TodoItem-todo ${done ? "done" : ""}`} onClick={toggleTodo}>
-            {text} <span className='todoItemIcon' onClick={removeTodo}><DeleteOutlined style={{ fontSize: '25px' }}/></span>
-            <span className='todoItemIcon' onClick={showModal}><FormOutlined style={{ fontSize: '25px' , marginRight: '20px'}}/></span>
+            {text} <span className='todoItemIcon' onClick={removeTodo}><DeleteOutlined className ="antIcon"/></span>
+            <span className='todoItemIcon' onClick={showModal}><FormOutlined className ="antIcon" /></span>
         </p>
         <TodoUpdateModal 
             id={id} 
