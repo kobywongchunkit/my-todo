@@ -19,7 +19,8 @@ function TodoItem({todo}){
     function removeTodo(event){
         event.stopPropagation();
         deleteTodo(id).then((reponse)=>{
-            dispatch({type:REMOVE_TODO,payload: reponse.data.id})
+            if (reponse.status === 200)
+                dispatch({type:REMOVE_TODO,payload: id})
         })
     }
 
