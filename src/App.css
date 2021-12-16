@@ -53,6 +53,7 @@ h1{
   border: none;
   margin: 3%;
   cursor: pointer;
+  font-family:'Courier New', Courier, monospace;
 }
 
 input{
@@ -72,6 +73,7 @@ input{
   font-size: 20px;
   text-decoration: none;
   background: none;
+  border-radius: 10px;
 }
 
 .done {
@@ -97,6 +99,8 @@ li {
 
 .todoInput{
   font-size: large;
+  font-family:'Courier New', Courier, monospace;
+  border-radius: 5px;
 }
 
 .clock::after {
