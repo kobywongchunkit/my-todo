@@ -23,7 +23,9 @@ function TodoItem({todo}){
 
     const showModal = (event) => {
         event.stopPropagation();
-        setIsModalVisible(true);
+        if(!done){
+            setIsModalVisible(true);
+        }
       };
       
 
