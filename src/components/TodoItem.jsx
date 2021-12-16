@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, updateTodo } from '../apis/todo';
-import { REMOVE_TODO, TOGGLE_DONE } from '../constants/constants'
 import { DeleteOutlined, FormOutlined} from '@ant-design/icons';
+
+import { REMOVE_TODO, TOGGLE_DONE } from '../constants/constants'
+import { deleteTodo, updateTodo } from '../apis/todo';
 import TodoUpdateModal from './TodoUpdateModal';
+
 function TodoItem({todo}){
     const dispatch = useDispatch();
     const [isModalVisible, setIsModalVisible] = useState(false);
