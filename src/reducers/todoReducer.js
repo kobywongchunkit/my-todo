@@ -1,7 +1,7 @@
 import { ADD_TODO, TOGGLE_DONE ,REMOVE_TODO, INIT_TODO, UPDATE_TODO} from "../constants/constants";
 
-const initLocal = {todos:[]};
-const todoReducer = (state = initLocal , action) =>{
+const init = {todos:[]};
+const todoReducer = (state = init , action) =>{
     switch(action.type){
         case ADD_TODO:
             return {...state, todos : [...state.todos, action.payload]}
