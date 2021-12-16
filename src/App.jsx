@@ -28,9 +28,14 @@ function App() {
     <Router>
       <div>
         <Menu mode="horizontal">
-          <Menu.Item key="1"><Link className="navBarItem" to="/">Home</Link></Menu.Item>
-          <Menu.Item key="2"><Link className="navBarItem" to="/Done">Done</Link></Menu.Item>
-          <Menu.Item key="3"><Link className="navBarItem" to="/Undone">Undone</Link></Menu.Item>
+          <Menu.Item key="1">
+            <Link className="navBarItem" to="/">Home</Link>
+          </Menu.Item>
+          <Menu.Item key="2">
+            <Link className="navBarItem" to="/Done">Done</Link></Menu.Item>
+          <Menu.Item key="3">
+            <Link className="navBarItem" to="/Undone">Undone</Link>
+          </Menu.Item>
         </Menu>
         <Switch>
           <Route path="/Done">
