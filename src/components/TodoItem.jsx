@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { DeleteOutlined, FormOutlined} from '@ant-design/icons';
 
-import { REMOVE_TODO, UPDATE_TODO } from '../constants/constants'
+import { REMOVE_TODO, UPDATE_TODO, HTTP_STATUS_NO_CONTENT} from '../constants/constants'
 import { deleteTodo, updateTodo } from '../apis/todo';
 import TodoUpdateModal from './TodoUpdateModal';
 
@@ -19,7 +19,7 @@ function TodoItem({todo}){
     function removeTodo(event){
         event.stopPropagation();
         deleteTodo(id).then((reponse)=>{
-            if (reponse.status === 200)
+            if (reponse.status === HTTP_STATUS_NO_CONTENT)
                 dispatch({type:REMOVE_TODO,payload: id})
         })
     }
