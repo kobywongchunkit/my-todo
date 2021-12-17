@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import { Modal ,Input } from 'antd';
-import { updateTodo } from '../apis/todo';
-import { useDispatch } from 'react-redux';
-import { UPDATE_TODO } from '../constants/constants';
+import { useState } from "react";
+import { Modal, Input } from "antd";
+import { updateTodo } from "../apis/todo";
+import { useDispatch } from "react-redux";
+import { UPDATE_TODO } from "../constants/constants";
 
-const TodoUpdateModal = ({id,text,setIsModalVisible,isModalVisible}) => {
+const TodoUpdateModal = ({ id, text, setIsModalVisible, isModalVisible }) => {
   const orginal_text = text;
   const [modalText, setModalText] = useState(text);
   const dispatch = useDispatch();
-  
 
   const handleOk = () => {
-    if(modalText !== text){
-      updateTodo(id,{text:modalText}).then((reponse)=>{
-        dispatch({type:UPDATE_TODO,payload: reponse})
+    if (modalText !== text) {
+      updateTodo(id, { text: modalText }).then((reponse) => {
+        dispatch({ type: UPDATE_TODO, payload: reponse });
       });
     }
     setIsModalVisible(false);
@@ -25,9 +24,18 @@ const TodoUpdateModal = ({id,text,setIsModalVisible,isModalVisible}) => {
   };
 
   return (
-      <Modal title={"Editing Todo : '"+text+"'"} visible={isModalVisible} onOk={handleOk}  onCancel={handleCancel} destroyOnClose={true}>
-        <Input onChange={text => setModalText(text.target.value)} defaultValue={modalText}/>
-      </Modal>
+    <Modal
+      title={"Editing Todo : '" + text + "'"}
+      visible={isModalVisible}
+      onOk={handleOk}
+      onCancel={handleCancel}
+      destroyOnClose={true}
+    >
+      <Input
+        onChange={(text) => setModalText(text.target.value)}
+        defaultValue={modalText}
+      />
+    </Modal>
   );
 };
 
