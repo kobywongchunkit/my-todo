@@ -4,13 +4,13 @@ const init = {todos:[]};
 const todoReducer = (state = init , action) =>{
     switch(action.type){
         case ADD_TODO:
-            return {...state, todos : [...state.todos, action.payload]}
+            return { todos : [...state.todos, action.payload] }
         case REMOVE_TODO:
-            return {...state, todos : state.todos.filter(todo => todo.id !== action.payload)}
+            return { todos : state.todos.filter(todo => todo.id !== action.payload) }
         case INIT_TODO:
-            return {...state, todos : action.payload}
+            return { todos : action.payload}
         case UPDATE_TODO:
-            return {...state, todos : state.todos.map(item => (item.id === action.payload.data.id ? action.payload.data : item))}
+            return { todos : state.todos.map(item => (item.id === action.payload.data.id ? action.payload.data : item)) }
         default:
             return state;
     }
